@@ -1,0 +1,14 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.right{
+  text-align: right;
+}
+li{
+  margin: 1.2rem;
+}
+Modal{
+  width: 900px !important;
+  height: 900px !important;
+}
