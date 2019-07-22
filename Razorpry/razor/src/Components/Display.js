@@ -1,41 +1,24 @@
-import React, { Component } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {GridList,GridTitle, GridTile} from 'material-ui';
-import { Button } from 'reactstrap';
-import Appcss from '../App.css';
+import React, { Component } from "react";
+import { Button } from "reactstrap";
+import Appcss from "../App.css";
+import Cards from "./Cards";
+import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField/TextField";
 
-import Modals from './Modals';
+import Modals from "./Modals";
 class Display extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          modal: false,
-          dataId:{}
-        };
-    
-        this.toggle = this.toggle.bind(this);
-    }
-    toggle() {
-        this.setState(({
-          modal: !this.state.modal
-        }));
-      }    
-    
-    componentDidMount(){
-        console.log(this.props.user_interest);
-    }
-    render() {
-        const data = this.props.user_interest;
-        return (
-            <div>
-            <GridList cols={4}>
-                {data.length>0 ? data.map(ele =>(
-                    <Modals ele={ele} />
-                )):<div>Loading..</div>}
-                </GridList>
-            </div>
-        )
-    }
+  render() {
+    const data = this.props.user_interest;
+    return (
+      <div>
+        {data.length > 0 ? (
+          data.map(ele => <Cards ele={ele} />)
+        ) : (
+          <div>Loading..</div>
+        )}
+      </div>
+    );
+  }
 }
 
 export default Display;

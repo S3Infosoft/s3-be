@@ -1,7 +1,7 @@
-import {combineReducers} from 'redux';
-import thunk from 'redux-thunk';
-import hotel_reducers from './hotel_reducers'
+import thunk from "redux-thunk";
+import { combineReducers } from "redux";
+import hotel_reducer from "./hotel_reducer";
 
 export default combineReducers({
-    user_hotels:hotel_reducers
-})
+  user_hotels: hotel_reducer
+});
