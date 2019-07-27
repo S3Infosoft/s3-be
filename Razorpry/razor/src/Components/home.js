@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 //components
 import Form from "./Form";
-import Navbar from "./Navbar";
-import Dashboard from "./Main_dashBoard/MuiDashBoard";
+import Navbar from "./navbar";
+import HotDeals from "./HotDeals";
 
 import PropTypes, { element } from "prop-types";
 // redux
@@ -12,13 +12,11 @@ import { loadapi } from "../actions/act";
 class home extends Component {
   componentDidMount() {
     this.props.loadapi();
-    console.log("home monted");
   }
   render() {
     return (
       <div>
         <Navbar />
-        <Dashboard />
         <Form />
       </div>
     );

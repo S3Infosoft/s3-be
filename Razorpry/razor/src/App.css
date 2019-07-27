@@ -1,6 +1,5 @@
 .App {
   width: 100%;
-  overflow-x: hidden;
   height: 100%;
   color: #fff !important;
   background: #ffffff !important;
@@ -8,9 +7,4 @@
 .full-card {
   width: 100% !important;
   position: relative;
-}
-.CardMedia {
-  object-fit: cover;
-}
-.Texts {
 }

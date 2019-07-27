@@ -10,6 +10,11 @@ const shema = new mongoose.Schema({
     type: Number,
     required: true,
     trim: false
+  },
+  Date: {
+    type: String,
+    required: false,
+    default: Date.now()
   }
 });
 

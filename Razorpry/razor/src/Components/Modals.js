@@ -36,41 +36,66 @@ class Modals extends Component {
     const { bool } = this.state;
     return (
       <React.Fragment>
-        <Alert color="succcess">
-          {this.props.ele.title}
-          <Button color="info" onClick={this.toggle} className="float-right">
-            Info
-          </Button>
-          <Modal
-            isOpen={this.state.modal}
-            toggle={this.toggle}
-            className={this.props.className}
-          >
-            <ModalHeader toggle={this.toggle}>
-              {this.props.ele.title}
-            </ModalHeader>
-            <ModalBody>
-              <Jumbotron>
-                ID:{this.props.ele.albumId}
-                <br />
-                Name:{this.props.ele.title}
-                <br />
-                Contact:{this.props.ele.url}
-                <br />
-              </Jumbotron>
-              <Button
-                color="success"
-                className="float-right"
-                onClick={() => {
-                  this.props.userInterest(this.props.ele);
-                  this.toggle();
-                }}
-              >
-                Add Hotel
-              </Button>
-            </ModalBody>
-          </Modal>
-        </Alert>
+        <div className="container" style={{ width: "100%" }}>
+          <div className="card">
+            <div className="row">
+              <div className="col-md-6 col-sm-0 col-lg-6 col-xl-6">
+                <div className="carousel slide" data-ride="carousel">
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img
+                        className="d-block "
+                        src="https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/82/61/8261498_v3.jpeg"
+                        alt="room"
+                      />
+                    </div>
+                    <div className="carousel-item">
+                      <img
+                        src="https://imgcy.trivago.com/c_lfill,d_dummy.jpeg,e_sharpen:60,f_auto,h_225,q_auto,w_225/itemimages/63/30/6330212.jpeg"
+                        alt="rooms"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4 col-sm-0 col-lg-4 col-xl-4">
+                <div className="carousel" id="carousel" />
+              </div>
+              <Alert color="succcess">
+                <Button
+                  color="info"
+                  onClick={this.toggle}
+                  className="float-right"
+                >
+                  Info
+                </Button>
+                <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                  <ModalHeader toggle={this.toggle}>Modal</ModalHeader>
+                  <ModalBody>
+                    <Jumbotron>
+                      ID:Hello
+                      <br />
+                      Name:Hey
+                      <br />
+                      Contact:Why
+                      <br />
+                    </Jumbotron>
+                    <Button
+                      color="success"
+                      className="float-right"
+                      onClick={() => {
+                        this.props.userInterest(this.props.ele);
+                        this.toggle();
+                      }}
+                    >
+                      Add Hotel
+                    </Button>
+                  </ModalBody>
+                </Modal>
+              </Alert>
+            </div>
+          </div>
+        </div>
       </React.Fragment>
     );
   }
