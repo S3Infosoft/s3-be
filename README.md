@@ -12,9 +12,11 @@ Steps to run in development mode:-
       Make sure you have npm Node.js installed in your system
       server:
         cd to node-app folder 
+          RUN non install
           RUN npm run server
       client:
          cd to react-app folder 
+          RUN non install
           RUN npm run start
       
       Go to http://localhost:3000 to see the client application running.
