@@ -23,6 +23,7 @@ Steps to run in development mode:-
 Links:
     Server:
        http://localhost:5000:: rest-api
+       
        http://localhost:5000/rest :: all data regarding rooms (get request)
        http://localhost:5000/rest/api :: user liked hotel list (get request)
        http://localhost:5000/rest/api :: post new liked hotel in database (post request)
