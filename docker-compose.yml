@@ -1,0 +1,37 @@
+version: "3"
+services:
+  # client image
+  reactclient:
+    container_name: react-app
+    image: react-app
+    build: ./react-app
+    command: serve -s build
+    environment:
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+
+  # server image
+  newsservice:
+    container_name: express-app
+    image: express-app
+    build: ./express-app
+    command: node app.js
+    ports:
+      - "5000:5000"
+    depends_on:
+      - "mongo"
+
+  # mongo image
+  mongo:
+    container_name: mongo
+    image: "mongo"
+    ports:
+      - "27017:27017"
+
+  # admin mongo
+  adminmongo:
+    container_name: adminmongo
+    image: "mrvautin/adminmongo"
+    ports:
+      - "1234:1234"
